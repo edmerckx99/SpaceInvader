@@ -1,4 +1,5 @@
 import pygame
+import random
 
 # initialize the pygame
 pygame.init()
@@ -17,9 +18,19 @@ playerX = 370  # define the initial X value
 playerY = 480  # define the initial Y value
 playerX_change = 0
 
+# Enemy
+enemyImg = pygame.image.load('enemy.png')
+enemyX = random.randint(0, 800)  # define the initial X value
+enemyY = random.randint(50, 150)  # define the initial Y value
+enemyX_change = 0
+
 
 def player(x, y):
     screen.blit(playerImg, (x, y))
+
+
+def enemy(x, y):
+    screen.blit(enemyImg, (x, y))
 
 
 # Game loop
@@ -54,5 +65,7 @@ while running:
     # Add the player to the screen
     player(playerX, playerY)
 
+    # Add enemy
+    enemy(enemyX, enemyY)
     # Update the display
     pygame.display.update()
