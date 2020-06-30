@@ -46,6 +46,11 @@ while running:
     # Update the playerX position
     playerX += playerX_change
 
+    # So the player does not go off the screen
+    if playerX <= 0:
+        playerX = 0
+    if playerX >= 736:
+        playerX = 736
     # Add the player to the screen
     player(playerX, playerY)
 
